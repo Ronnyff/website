@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Rawnak</title>
+<style type="text/css" media="all">
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+.sidebar {
+  position: absolute;
+  background-color: #a8aaab;
+  /*width: 10vw;*/
+  height: 100vh;
+  padding: 72px;
+  font-family: 'Fira Sans', sans-serif;
+ transition: transform 0.3s ease-in;
+}
+.container {
+  display: flex;
+}
+
+.sidebar nav li {
+  list-style: none;
+  padding: 33px 0;
+  font-size: 30px;
+}
+.sidebar nav li a {
+  text-decoration: none;
+  color: black;
+}
+.main {
+ /* background-color: yellow;*/
+  width: 90vw;
+}
+.info {
+ /* background-color: #ff00ba;*/
+  height: 78vh;
+  width: 80vw;
+  margin: 144px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.devinfo {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Fira Sans', sans-serif;
+}
+.devpic img {
+  width: 341px;
+}
+.hello {
+  font-size: 3em;
+  
+}
+.name {
+  font-size: 90px;
+  
+}
+
+.about {
+  font-size: 50px;
+  
+}
+.moreabout {
+  
+  font-size: 30px;
+  text-align: center;
+  
+}
+
+.btn {
+  margin: 50px 40px;
+  height: 80px;
+  width: 200px;
+  background-color: transparent;
+  font-size: 30px;
+  border: 2px solid black;
+  border-radius: 30px;
+  cursor: pointer;
+  color: black;
+  font-family: 'Fira Sans', sans-serif;
+}
+ .sidebargo{
+  transform: translate(-330px,0px);
+  position: absolute;
+}
+.hamburger {
+  display: flex;
+  font-size: 60px;
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  left: 30px;
+}
+.cross {
+  margin-left: 100px;
+}
+@media (max-width:1115px){
+  
+  .devpic img{
+    display: none;
+  }
+  .name {
+    font-size: 36px;
+  }
+  .moreabout {
+    font-size: 10px;
+  }
+  .about {
+    font-size: 15px;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar sidebargo">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">My Intro</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">CV</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main">
+      <div class="hamburger">
+       <div class="ham"> <i class="fa-solid fa-bars"></i></div>
+       <div class="cross">
+        <i class="fa-solid fa-xmark"></i>
+       </div>
+      </div>
+      <div class="info">
+        <div class="devpic">
+          <div class="pic">
+            <img src="Logo.png" alt="" />
+          </div>
+        </div>
+        <div class="devinfo">
+          <div class="hello">
+            Hi I am
+          </div>
+          <div class="name">
+            Rawnak Bhagat
+          </div>
+          <div class="about">
+            Web developer,Coder,Fluter
+          </div>
+          <div class="moreabout">
+            I am a school and dream is to be a space scientist or web developer.
+          </div>
+          <div class="button">
+
+            <button class="btn">Download Cv</button>
+            <button class="btn">Contact me</button>
+          </div>
+        </div>
+        <!--  <div class="devpic">
+                                    <img src="logo.png" alt="logo" />
+                                </div>-->
+      </div>
+    </div>
+  </div>
+  
+
+
+<script>
+console.log('Running.....')
+document.querySelector('.cross').style.display = 'none';
+document.querySelector('.hamburger').addEventListener("click", ()=> {
+  document.querySelector('.sidebar').classList.toggle('sidebargo');
+});
+
+if (document.querySelector('.sidebar').classList.contains('sidebargo')) {
+  
+  document.querySelector('.ham').style.display = 'inline';
+  document.querySelector('.cross').style.display = 'none';
+}
+else{
+  document.querySelector('.ham').style.display = 'none';
+  document.querySelector('.cross').style.display = 'inline';
+}
+
+/*const span = document.querySelector("span");
+const classes = span.classList;
+
+span.addEventListener('click', () => {
+  const result = classes.toggle("c");
+  span.textContent = `'c' ${result ? "added" : "removed"}; classList is now "${classes}".`;
+})*/
+</script>
+</body>
+</html>
